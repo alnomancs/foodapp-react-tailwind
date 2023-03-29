@@ -3,6 +3,26 @@ import React, { useState } from "react";
 
 const Food = () => {
   const [foods, setFoods] = useState(data);
+
+  // Fillter type burger/pizza/ etc
+
+  const filterType = (catagory) => {
+    setFoods(
+      data.filter((item) => {
+        return item.category === catagory;
+      })
+    );
+  };
+
+  // Fillter price
+  const filterPrice = (price) => {
+    setFoods(
+      data.filter((item) => {
+        return item.price === price;
+      })
+    );
+  };
+
   return (
     <div className="max-w-[1640px] mx-auto px-4 py-12">
       <h1 className="text-orange-600 font-bold text-4xl text-center">
@@ -16,19 +36,34 @@ const Food = () => {
         <div>
           <p className="font-bold text-gray-700"> Filter Type</p>
           <div className="flex justify-between flex-wrap">
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => setFoods(data)}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               All
             </button>
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterType("burger")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               Burders
             </button>
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterType("pizza")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               Pizza
             </button>
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterType("salad")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               Salads
             </button>
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterType("chicken")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               Chicken
             </button>
           </div>
@@ -36,16 +71,28 @@ const Food = () => {
         <div>
           <p className="font-bold text-gray-700">Fillter Price</p>
           <div className="flex justify-between max-w-[390px] w-full">
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterPrice("$")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               $
             </button>
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterPrice("$$")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               $$
             </button>
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterPrice("$$$")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               $$$
             </button>
-            <button className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1">
+            <button
+              onClick={() => filterPrice("$$$$")}
+              className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white m-1"
+            >
               $$$$
             </button>
           </div>
