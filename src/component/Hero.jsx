@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hero() {
+const Hero = () => {
   return (
     <div className="max-w-[1640px] mx-auto p-4">
       {/* { overlay } */}
@@ -21,6 +21,6 @@ function Hero() {
       </div>
     </div>
   );
-}
+};
 
 export default Hero;
