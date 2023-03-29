@@ -14,7 +14,7 @@ import { FaUserFriends, FaWallet } from "react-icons/fa";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 border ">
+    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 ">
       {/* { left side} */}
       <div className="flex items-center">
         <div className="cursor-pointer" onClick={() => setNav(!nav)}>
